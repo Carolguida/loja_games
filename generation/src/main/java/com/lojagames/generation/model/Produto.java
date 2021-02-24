@@ -22,6 +22,9 @@ public class Produto {
 	@Size(min = 2, max = 100)
 	private String nomeProduto;
 
+	@NotNull
+	private double precoProduto;
+
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
 	private Categoria categoria;
@@ -48,6 +51,14 @@ public class Produto {
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
+	}
+
+	public double getPrecoProduto() {
+		return precoProduto;
+	}
+
+	public void setPrecoProduto(double precoProduto) {
+		this.precoProduto = precoProduto;
 	}
 
 }
